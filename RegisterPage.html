@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Register</title>
+
+            <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+            <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+    </head>
+
+    <style>
+        input[type=text], select {
+          width: 100%;
+          padding: 12px 20px;
+          margin: 8px 0;
+          display: inline-block;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          box-sizing: border-box;
+        }
+
+        input[type=submit] {
+          width: 100%;
+          background-color: #4c4faf;
+          color: white;
+          padding: 14px 20px;
+          margin: 8px 0;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+        }
+
+        input[type=submit]:hover {
+          background-color: #45a049;
+        }
+
+        p {
+          border-radius: 5px;
+          background-color: #f2f2f2;
+          padding: 20px;
+        }
+    </style>
+
+    <body>
+        <h1>Register </h1>
+
+        <form onsubmit="return false">
+            <label for="firstname">First name:</label><br>
+            <input type="text" id="firstname" name="firstname"><br>
+            <label for="lastname">Last name:</label><br>
+            <input type="text" id="lastname" name="lastname">
+            <input type="submit" pys-onClick="AuthLogin" id="btn-form">
+        </form>
+        <br>
+        <p> If you have an Account Already: </p>
+        <a href="LoginPage.html">Login</a>
+        <p id='output'></p>
+
+        <py-script>
+            def AuthLogin(*args,**kwargs):
+                output = Element('output')
+                first = Element('firstname').value
+                last = Element('lastname').value
+
+                AccList = open("openurl(https://gist.githubusercontent.com/CalvinThai44/a63de8b4506ecb34bc4b5ffa0a3ceb97/raw/01323c768e502e1d0d745094bc38a12a62a9025e/TAFE%2520Lesson%25201_accounts.txt") ,'r')
+                for accounts in AccList:
+                    print(accounts)
+
+
+        </py-script>
+    </body>
+</html>
